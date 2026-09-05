@@ -5,6 +5,7 @@
 An iterable is an object that can provide an iterator.
 
 Examples:
+
 - list
 - tuple
 - set
@@ -15,10 +16,13 @@ Examples:
 
 Example:
 
+```python
 my_list = [1, 2, 3]
 
 I = iter(my_list)
+```
 
+---
 
 ## 2. iter()
 
@@ -26,13 +30,19 @@ I = iter(my_list)
 
 Syntax:
 
+```python
 iterator = iter(iterable)
+```
 
 Example:
 
+```python
 my_list = [1, 2, 3]
-I = iter(my_list)
 
+I = iter(my_list)
+```
+
+---
 
 ## 3. next()
 
@@ -40,37 +50,49 @@ I = iter(my_list)
 
 Example:
 
+```python
 I = iter([1, 2, 3])
 
 next(I)  # 1
 next(I)  # 2
 next(I)  # 3
+```
 
 When there are no more values, Python raises:
 
+```text
 StopIteration
+```
 
+---
 
-## 4. __next__()
+## 4. **next**()
 
 `__next__()` is the method used by an iterator to get the next value.
 
 Example:
 
+```python
 I = iter([1, 2, 3])
 
 I.__next__()  # 1
 I.__next__()  # 2
 I.__next__()  # 3
+```
 
 Usually, prefer:
 
+```python
 next(I)
+```
 
 instead of:
 
+```python
 I.__next__()
+```
 
+---
 
 ## 5. StopIteration
 
@@ -78,12 +100,15 @@ When an iterator has no more values, it raises `StopIteration`.
 
 Example:
 
+```python
 I = iter([1, 2])
 
 next(I)  # 1
 next(I)  # 2
 next(I)  # StopIteration
+```
 
+---
 
 ## 6. File Objects Are Iterators
 
@@ -91,19 +116,26 @@ A file object is its own iterator.
 
 Example:
 
+```python
 f = open("chai.py")
 
 iter(f) is f
+```
 
 Output:
 
+```text
 True
+```
 
 Therefore, we can directly use a file in a `for` loop:
 
+```python
 for line in open("chai.py"):
     print(line, end="")
+```
 
+---
 
 ## 7. List vs Iterator
 
@@ -111,16 +143,21 @@ A list is an iterable, but it is not its own iterator.
 
 Example:
 
+```python
 my_list = [1, 2, 3]
 
 iter(my_list) is my_list
+```
 
 Output:
 
+```text
 False
+```
 
-The process is:
+The process:
 
+```text
 list
   ↓
 iter()
@@ -130,12 +167,15 @@ list_iterator
 next()
   ↓
 value
+```
 
+---
 
 ## 8. range() Is Iterable
 
 Example:
 
+```python
 R = range(5)
 
 I = iter(R)
@@ -146,47 +186,55 @@ next(I)  # 2
 next(I)  # 3
 next(I)  # 4
 next(I)  # StopIteration
+```
 
+---
 
 ## 9. Important Difference
 
-Iterable:
+### Iterable
+
 An object that can provide an iterator.
 
-Iterator:
+### Iterator
+
 An object that produces values one at a time using `next()`.
 
+---
 
 ## 10. Easy Mental Model
 
+```text
 ITERABLE
-    ↓
+   ↓
 iter()
-    ↓
+   ↓
 ITERATOR
-    ↓
+   ↓
 next()
-    ↓
+   ↓
 VALUE
-    ↓
+   ↓
 next()
-    ↓
+   ↓
 VALUE
-    ↓
+   ↓
 ...
-    ↓
+   ↓
 StopIteration
+```
 
+---
 
 ## Interview Answer
 
-Question:
-What is an iterator in Python?
+**Question:** What is an iterator in Python?
 
-Answer:
+**Answer:**
 
 "Yes Sir, an iterator is an object that produces values one at a time. We can obtain an iterator using the `iter()` function and retrieve values using `next()`. When there are no more values, the iterator raises `StopIteration`."
 
+---
 
 ## Key Points to Remember
 
