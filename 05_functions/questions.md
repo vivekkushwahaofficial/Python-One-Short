@@ -1,4 +1,4 @@
-## Learn all about functions by answering the questions below.
+# Learn all about functions by answering the questions below.
 
 
 <details>
