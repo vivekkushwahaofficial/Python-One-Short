@@ -8,8 +8,8 @@ A practical repository for learning **Core Python** through notes, examples, and
 * ✅ Conditions
 * ✅ Loops
 * ✅ Iterables & Iterators
-* 🟡 Functions
-* 🟡 Scope
+* ✅ Functions
+* ✅ Scope
 * 🟡 OOP
 * ⬜ Strings
 * ⬜ Lists
